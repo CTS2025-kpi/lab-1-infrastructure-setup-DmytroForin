@@ -1,0 +1,6 @@
+Now perform one of the following (you need to select only one action):
+	Create an IaM user and attach FullAdmin policy. 
+	Use it for all future interactions with the system. (1 point) 
+	Create an IaM Identity center account (or analog for you cloud provider).
+	Also make it full admin. (2 points) 
+	(Optional) Create an Organisation docs.aws.amazon.com/organizations/latest/userguide/orgs_tutorials_basic.html and user for it. All next labs are to be performed within it. (2 points) 

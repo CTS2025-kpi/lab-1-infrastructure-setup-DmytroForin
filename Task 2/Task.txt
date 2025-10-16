@@ -1,0 +1,5 @@
+Create one more user. Create an IaM policy that allows ONLY to view resources (no write access). (1 point)
+
+Create a Role that has this policy attached and can be assumed by user from p3. (1 point) 
+
+(Optional) Create a Cloudformation (or Terraform, OpenTofu, whatever) template describing your policy and role. (1 point)

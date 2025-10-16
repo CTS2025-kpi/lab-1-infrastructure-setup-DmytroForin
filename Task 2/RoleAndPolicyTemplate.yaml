@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: IAM Role with view-only access, assumable by read_only_user
+
+Resources:
+  ReadOnlyPolicy1:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: ReadOnlyPolicy1
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: VisualEditor0
+            Effect: Allow
+            Action:
+              - iam:GenerateCredentialReport
+              - iam:GetPolicyVersion
+              - iam:GetAccountPasswordPolicy
+              - iam:GetMFADevice
+              - iam:GetServiceLastAccessedDetailsWithEntities
+              - iam:GenerateServiceLastAccessedDetails
+              - iam:GetServiceLastAccessedDetails
+              - iam:GetGroup
+              - iam:GetContextKeysForPrincipalPolicy
+              - iam:GetOrganizationsAccessReport
+              - iam:GetServiceLinkedRoleDeletionStatus
+              - iam:SimulateCustomPolicy
+              - iam:SimulatePrincipalPolicy
+              - iam:GenerateOrganizationsAccessReport
+              - iam:GetAccountEmailAddress
+              - iam:GetCloudFrontPublicKey
+              - iam:GetAccountAuthorizationDetails
+              - iam:GetCredentialReport
+              - iam:GetSAMLProvider
+              - iam:GetServerCertificate
+              - iam:GetRole
+              - iam:GetInstanceProfile
+              - iam:GetPolicy
+              - iam:GetAccessKeyLastUsed
+              - iam:GetSSHPublicKey
+              - iam:GetContextKeysForCustomPolicy
+              - iam:GetUserPolicy
+              - iam:GetAccountName
+              - iam:GetGroupPolicy
+              - iam:GetUser
+              - iam:GetOpenIDConnectProvider
+              - iam:GetRolePolicy
+            Resource: "*"
+      Roles:
+        - !Ref ReaderRole1
+
+  ReaderRole1:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: ReaderRole1
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Statement1
+            Effect: Allow
+            Principal:
+              AWS: arn:aws:iam::951979285572:user/read_only_user
+            Action: sts:AssumeRole

@@ -1,0 +1,3 @@
+Create a network (VPC for your resources). There should be private and public subnets. Public one has IGW, private ones are for internal access only. (3 points)
+
+(Optional) Create IaC stack holding hour network resources. (2 points)
